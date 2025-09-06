@@ -240,7 +240,29 @@ ref: https://docs.expo.dev/develop/user-interface/store-data/
 
 npx expo install @react-native-async-storage/async-storage
 
+```
 
 
+
+## Expo Location
+
+ref: [Expo Location](https://docs.expo.dev/versions/latest/sdk/location/)
+
+```sh 
+
+npx expo install expo-location
+
+
+```
+
+
+
+
+## Zustand
+
+
+```sh 
+
+npm install zustand
 
 ```

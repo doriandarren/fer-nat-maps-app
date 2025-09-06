@@ -4,7 +4,7 @@ import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
 
-import { useColorScheme } from '@/hooks/useColorScheme';
+import { useColorScheme } from '@/presentation/hooks/useColorScheme';
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
@@ -19,9 +19,27 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
+      <Stack
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        
+        <Stack.Screen 
+          name='loading/index' 
+          options={{ animation: 'none' }}
+        />
+
+        <Stack.Screen 
+          name='map/index' 
+          options={{ animation: 'fade' }}
+        />
+
+        <Stack.Screen 
+          name='permissions/index' 
+          options={{ animation: 'fade' }}
+        />
+
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>
