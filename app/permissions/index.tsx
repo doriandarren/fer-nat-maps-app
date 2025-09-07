@@ -1,6 +1,7 @@
+import ThemedButton from '@/presentation/components/shared/ThemedButton';
 import { ThemedText } from '@/presentation/components/shared/ThemedText';
 import { usePermissionsStore } from '@/presentation/store/usePermissions';
-import { Pressable, View } from 'react-native';
+import { View } from 'react-native';
 
 const PermissionsScreen = () => {
 
@@ -14,11 +15,11 @@ const PermissionsScreen = () => {
       alignItems: 'center',
     }}>
 
-      <Pressable
+      <ThemedButton
         onPress={requestLocationPermission}
       >
-        <ThemedText>Habilitar ubicación</ThemedText>
-      </Pressable>
+        Habilitar ubicación
+      </ThemedButton>
 
       <ThemedText>Estado Actual: {locationStatus}</ThemedText>
     </View>

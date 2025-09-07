@@ -1,7 +1,8 @@
-import { PropsWithChildren, useEffect } from 'react';
-import { usePermissionsStore } from '../store/usePermissions';
 import { PermissionStatus } from '@/infraestructure/interfaces/location';
 import { router } from 'expo-router';
+import { PropsWithChildren, useEffect } from 'react';
+import { AppState } from 'react-native';
+import { usePermissionsStore } from '../store/usePermissions';
 
 
 
@@ -27,6 +28,22 @@ const PermissionsChekerProvider = ({children}: PropsWithChildren) => {
     }, [])
     
     //TODO
+    useEffect(() => {
+      const subscription = AppState.addEventListener('change', (nextAppState) => {
+        //console.log({nextAppState});
+
+        if(nextAppState === 'active'){
+            checkLocationPermission();
+        }
+
+      });
+
+      return () => {
+        subscription.remove();
+      };
+    }, [])
+    
+
 
     return (
         <>
