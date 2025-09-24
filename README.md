@@ -22,12 +22,17 @@ npx expo start
 
 npx expo start -c  // el flag "-c" Limpiar la cache
 
+
+## Build
+npx expo prebuild       ## Primero se preconstruye
+npx expo run:android    ## Android
+npx expo run:ios        ## IOS
+
+
 ```
 
 
 ## Commands:
-
-
 
 ```sh
 
@@ -264,5 +269,16 @@ npx expo install expo-location
 ```sh 
 
 npm install zustand
+
+```
+
+
+## Maps
+
+ref: https://docs.expo.dev/versions/latest/sdk/map-view/
+
+```sh 
+
+npx expo install react-native-maps
 
 ```
